@@ -19,7 +19,17 @@ public class Aircraft {
 	private Long id;
 	@Column
 	private String model;
+	@Column
+	private String prefix;
 	@OneToMany(mappedBy = "aircraft")
 	private List<Flight> flight;
-
+	
+	public String getModelAndPrefix(){
+		StringBuilder builder = new StringBuilder();
+		builder.append(prefix);
+		builder.append(" - ");
+		builder.append(model);
+		return builder.toString();
+	}
+	
 }

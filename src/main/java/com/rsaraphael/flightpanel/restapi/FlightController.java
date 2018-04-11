@@ -6,8 +6,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.rsaraphael.flightpanel.flight.Flight;
 import com.rsaraphael.flightpanel.flight.FlightService;
+import com.rsaraphael.flightpanel.flight.FlightVO;
 
 @RestController(value="/flight")
 public class FlightController {
@@ -15,7 +15,7 @@ public class FlightController {
 	private FlightService flightService;
 
 	@GetMapping()
-	public List<Flight> getAllFlights() {
+	public List<FlightVO> getAllFlights() {
 		return flightService.getAllFlights();
 	}
 }

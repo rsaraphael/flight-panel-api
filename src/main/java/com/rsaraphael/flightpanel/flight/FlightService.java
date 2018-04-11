@@ -9,9 +9,11 @@ import org.springframework.stereotype.Service;
 public class FlightService {
 	@Autowired
 	private FlightRepository flightRepository;
+	@Autowired
+	private FlightAdapter flightAdapter;
 
-	public List<Flight> getAllFlights() {
-		return flightRepository.findAll();
+	public List<FlightVO> getAllFlights() {
+		return flightAdapter.adapt(flightRepository.findAll());
 	}
 
 }
