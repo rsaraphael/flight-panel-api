@@ -9,7 +9,8 @@ CREATE TABLE Flight (
 
 CREATE TABLE Aircraft (
     id        serial primary key,
-    model       varchar(100)
+    model     varchar(100),
+    prefix    varchar(100)
 );
 
 CREATE TABLE Pilot (
@@ -18,9 +19,11 @@ CREATE TABLE Pilot (
 );
 
 
-CREATE TABLE City (
+CREATE TABLE Location (
     id        serial primary key,
-    name       varchar(100)
+    city       varchar(100),
+    state       varchar(100)
+    country       varchar(100)
 );
 
 CREATE TABLE Itinerary (
