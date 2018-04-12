@@ -6,8 +6,8 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
-import com.rsaraphael.flightpanel.flight.statechain.ItineraryStatusChain;
 import com.rsaraphael.flightpanel.itinerary.ItineraryDto;
+import com.rsaraphael.flightpanel.itinerary.statechain.ItineraryStatusChain;
 
 @Component
 public class FlightAdapter {

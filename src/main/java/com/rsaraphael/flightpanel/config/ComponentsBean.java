@@ -4,10 +4,10 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 
-import com.rsaraphael.flightpanel.flight.statechain.ArrivedChain;
-import com.rsaraphael.flightpanel.flight.statechain.AwaitingChain;
-import com.rsaraphael.flightpanel.flight.statechain.InFlightChain;
-import com.rsaraphael.flightpanel.flight.statechain.ItineraryStatusChain;
+import com.rsaraphael.flightpanel.itinerary.statechain.ArrivedChain;
+import com.rsaraphael.flightpanel.itinerary.statechain.AwaitingChain;
+import com.rsaraphael.flightpanel.itinerary.statechain.InFlightChain;
+import com.rsaraphael.flightpanel.itinerary.statechain.ItineraryStatusChain;
 
 @ComponentScan(basePackages = {"com.rsaraphael.*"})
 @Configuration

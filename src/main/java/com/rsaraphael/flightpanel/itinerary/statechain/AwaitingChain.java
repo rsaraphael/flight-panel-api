@@ -1,4 +1,4 @@
-package com.rsaraphael.flightpanel.flight.statechain;
+package com.rsaraphael.flightpanel.itinerary.statechain;
 
 import com.rsaraphael.flightpanel.itinerary.Itinerary;
 import com.rsaraphael.flightpanel.itinerary.ItineraryStatus;
