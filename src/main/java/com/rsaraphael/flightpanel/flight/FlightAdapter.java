@@ -6,27 +6,23 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
-import com.rsaraphael.flightpanel.flight.statechain.StateChain;
-import com.rsaraphael.flightpanel.itinerary.ItineraryVO;
+import com.rsaraphael.flightpanel.flight.statechain.ItineraryStatusChain;
+import com.rsaraphael.flightpanel.itinerary.ItineraryDto;
 
 @Component
 public class FlightAdapter {
 	@Autowired
-	private StateChain stateChain;
+	private ItineraryStatusChain stateChain;
 
-	public FlightVO adapt(Flight flight) {
-		List<ItineraryVO> itineraryVOs = new ArrayList<>();
-		flight.getItineraries().forEach(itinerary -> itineraryVOs
-				.add(new ItineraryVO(itinerary.getTime(), itinerary.getLocation().getCompletedInformation(), itinerary.getType())));
-		FlightState state = stateChain.getFlightState(flight);
-		return new FlightVO(flight.getAircraftInformation(), flight.getPilotName(), itineraryVOs,
-				state.toString());
-		
+	public FlightDto adapt(Flight flight) {
+		List<ItineraryDto> itineraries = new ArrayList<>();
+
+		flight.getItineraries().forEach(itinerary -> itineraries.add(new ItineraryDto(itinerary.getDepartTime(),
+				itinerary.getArriveTime(), itinerary.getPilot().getName(), itinerary.getAircraft().getModelAndPrefix(),
+				stateChain.getItineraryStatus(itinerary).getStatusName())));
+
+		return new FlightDto(flight.getId(), itineraries, flight.getOrigin().getCompletedInformation(),
+				flight.getDestination().getCompletedInformation());
 	}
 
-	public List<FlightVO> adapt(List<Flight> flights) {
-		List<FlightVO> flightVOs = new ArrayList<>();
-		flights.forEach(flight -> flightVOs.add(adapt(flight)));
-		return flightVOs;	
-	}
 }
