@@ -4,8 +4,6 @@ import java.util.Date;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.EnumType;
-import javax.persistence.Enumerated;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
 import javax.persistence.Temporal;
@@ -25,12 +23,14 @@ public class Itinerary {
 	private Long id;
 	@Column
 	@Temporal(TemporalType.TIMESTAMP)
-	private Date time;
+	private Date departTime;
 	@Column
-	@Enumerated(EnumType.STRING)
-	private ItineraryType type;
+	@Temporal(TemporalType.TIMESTAMP)
+	private Date arriveTime;	
 	@ManyToOne
-	private Location location;
+	private Pilot pilot;
+	@ManyToOne
+	private Aircraft aircraft;
 	@ManyToOne
 	private Flight flight;
 

@@ -4,13 +4,13 @@ import java.util.List;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.OrderBy;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.rsaraphael.flightpanel.itinerary.Itinerary;
-import com.rsaraphael.flightpanel.itinerary.ItineraryType;
+import com.rsaraphael.flightpanel.itinerary.Location;
 
 import lombok.Getter;
 import lombok.Setter;
@@ -22,35 +22,14 @@ public class Flight {
 
 	@Id
 	private Long id;
-	@ManyToOne
-	private Aircraft aircraft;
 	@OneToMany(mappedBy = "flight")
-	@OrderBy("type DESC")
+	@OrderBy("departTime DESC")
 	private List<Itinerary> itineraries;
 	@ManyToOne
-	private Pilot pilot;
+	@JoinColumn(name = "origin")
+	private Location origin;
+	@ManyToOne
+	@JoinColumn(name = "destination")
+	private Location destination;
 
-
-	@JsonIgnore
-	public Itinerary getArriveItinerary() {
-		return getFirstItineraryByType(ItineraryType.ARRIVE);
-	}
-
-	@JsonIgnore
-	public Itinerary getDepartItinerary() {
-		return getFirstItineraryByType(ItineraryType.DEPART);
-	}
-	
-	public String getPilotName(){
-		return pilot.getName();
-	}
-	
-	public String getAircraftInformation(){
-		return aircraft.getModelAndPrefix();
-	}
-
-	private Itinerary getFirstItineraryByType(ItineraryType type) {
-		return itineraries.stream().filter(itinerary -> itinerary.getType().equals(type)).findFirst().get();	
-
-	}
 }
