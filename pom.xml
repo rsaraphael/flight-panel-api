@@ -29,6 +29,20 @@
 		<db.dialect>org.hibernate.dialect.PostgreSQLDialect</db.dialect>
 	</properties>
 
+	<profiles>
+		<profile>
+			<id>heroku</id>
+			<properties>
+				<db.url>jdbc:postgresql://ec2-54-243-213-188.compute-1.amazonaws.com:5432/dfa8vp5s6qtepc?sslmode=require
+				</db.url>
+				<db.user>ckgvxpkxbmciik</db.user>
+				<db.pass>93d0b06cb73bb6b3d222ed3653a05f917795684e1449162ab4c9c336b9e04943</db.pass>
+				<db.driver>org.postgresql.Driver</db.driver>
+				<db.dialect>org.hibernate.dialect.PostgreSQLDialect</db.dialect>
+			</properties>
+		</profile>
+	</profiles>
+
 	<dependencies>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
@@ -52,7 +66,6 @@
 		<dependency>
 			<groupId>org.projectlombok</groupId>
 			<artifactId>lombok</artifactId>
-			<version>1.16.20</version>
 			<scope>provided</scope>
 		</dependency>
 	</dependencies>
@@ -98,6 +111,7 @@
 					<processTypes>
 						<web>java $JAVA_OPTS -Dserver.port=$PORT -jar target/*.jar  </web>
 					</processTypes>
+					<appName>flight-panel-api</appName>
 				</configuration>
 			</plugin>
 			<plugin>

@@ -9,20 +9,4 @@ import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 @EnableJpaRepositories(basePackages = { "com.rsaraphael.*" })
 public class DatabaseBean  {
 
-//	protected DatabaseBean(DataSource dataSource, JpaProperties properties,
-//			ObjectProvider<JtaTransactionManager> jtaTransactionManager,
-//			ObjectProvider<TransactionManagerCustomizers> transactionManagerCustomizers) {
-//		super(dataSource, properties, jtaTransactionManager, transactionManagerCustomizers);
-//	}
-//
-//	@Override
-//	protected AbstractJpaVendorAdapter createJpaVendorAdapter() {
-//		return new HibernateJpaVendorAdapter();
-//	}
-//
-//	@Override
-//	protected Map<String, Object> getVendorProperties() {
-//		return null;
-//	}
-
 }

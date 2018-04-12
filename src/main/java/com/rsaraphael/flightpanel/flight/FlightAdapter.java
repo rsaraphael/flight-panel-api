@@ -21,12 +21,12 @@ public class FlightAdapter {
 		FlightState state = stateChain.getFlightState(flight);
 		return new FlightVO(flight.getAircraftInformation(), flight.getPilotName(), itineraryVOs,
 				state.toString());
-
+		
 	}
 
 	public List<FlightVO> adapt(List<Flight> flights) {
 		List<FlightVO> flightVOs = new ArrayList<>();
 		flights.forEach(flight -> flightVOs.add(adapt(flight)));
-		return flightVOs;
+		return flightVOs;	
 	}
 }
