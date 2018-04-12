@@ -3,20 +3,19 @@ package com.rsaraphael.flightpanel.flight.statechain;
 import java.time.LocalDateTime;
 import java.time.ZoneOffset;
 
-import com.rsaraphael.flightpanel.flight.Flight;
-import com.rsaraphael.flightpanel.flight.FlightState;
+import com.rsaraphael.flightpanel.itinerary.Itinerary;
+import com.rsaraphael.flightpanel.itinerary.ItineraryStatus;
 
-public class InFlightChain extends StateChain {
-	
+public class InFlightChain extends ItineraryStatusChain {
+
 	@Override
-	public FlightState getFlightState(Flight flight) {
-		LocalDateTime arriveTime =  getLocalDateTimeItinerary(flight.getArriveItinerary().getTime());
-		LocalDateTime departTime =  getLocalDateTimeItinerary(flight.getDepartItinerary().getTime());
+	public ItineraryStatus getItineraryStatus(Itinerary itinerary) {
+		LocalDateTime arriveTime = getLocalDateTimeItinerary(itinerary.getArriveTime());
+		LocalDateTime departTime = getLocalDateTimeItinerary(itinerary.getDepartTime());
 		LocalDateTime now = LocalDateTime.now(ZoneOffset.UTC);
-		if(now.isAfter(departTime) && now.isBefore(arriveTime)){
-			return FlightState.IN_FLIGHT;
+		if (now.isAfter(departTime) && now.isBefore(arriveTime)) {
+			return ItineraryStatus.IN_FLIGHT;
 		}
-		return stateChain.getFlightState(flight);
+		return itineraryStatusChain.getItineraryStatus(itinerary);
 	}
-
 }

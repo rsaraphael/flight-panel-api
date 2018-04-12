@@ -4,17 +4,17 @@ import java.time.LocalDateTime;
 import java.time.ZoneOffset;
 import java.util.Date;
 
-import com.rsaraphael.flightpanel.flight.Flight;
-import com.rsaraphael.flightpanel.flight.FlightState;
+import com.rsaraphael.flightpanel.itinerary.Itinerary;
+import com.rsaraphael.flightpanel.itinerary.ItineraryStatus;
 
 import lombok.Setter;
 
-public abstract class StateChain {
+public abstract class ItineraryStatusChain {
 	
 	@Setter
-	protected StateChain stateChain;
+	protected ItineraryStatusChain itineraryStatusChain;
 	
-	public abstract FlightState getFlightState(Flight flight);
+	public abstract ItineraryStatus getItineraryStatus(Itinerary itinerary);
 	
 	protected LocalDateTime getLocalDateTimeItinerary(Date date){
 		return LocalDateTime.ofInstant(date.toInstant(), ZoneOffset.UTC);
