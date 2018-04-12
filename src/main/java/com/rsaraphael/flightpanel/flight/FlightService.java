@@ -1,5 +1,6 @@
 package com.rsaraphael.flightpanel.flight;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -12,8 +13,15 @@ public class FlightService {
 	@Autowired
 	private FlightAdapter flightAdapter;
 
-	public List<FlightVO> getAllFlights() {
-		return flightAdapter.adapt(flightRepository.findAll());
+	public List<Long> getAllFlightNumber() {
+		List<Long> flightNumbers = new ArrayList<>();
+		List<Flight> flights = flightRepository.findAll();
+		flights.forEach(flight -> flightNumbers.add(flight.getId()));
+		return flightNumbers;
+	}
+
+	public FlightDto getFlightById(Long id) {
+		return flightAdapter.adapt(flightRepository.findById(id).get());
 	}
 
 }
