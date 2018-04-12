@@ -7,19 +7,19 @@ import org.springframework.context.annotation.Configuration;
 import com.rsaraphael.flightpanel.flight.statechain.ArrivedChain;
 import com.rsaraphael.flightpanel.flight.statechain.AwaitingChain;
 import com.rsaraphael.flightpanel.flight.statechain.InFlightChain;
-import com.rsaraphael.flightpanel.flight.statechain.StateChain;
+import com.rsaraphael.flightpanel.flight.statechain.ItineraryStatusChain;
 
 @ComponentScan(basePackages = {"com.rsaraphael.*"})
 @Configuration
 public class ComponentsBean {
 	
 	@Bean
-	public StateChain stateChain(){
+	public ItineraryStatusChain stateChain(){
 		ArrivedChain arrivedChain = new ArrivedChain();
 		InFlightChain inFlightChain = new InFlightChain();
 		AwaitingChain awaitingChain = new AwaitingChain();
-		arrivedChain.setStateChain(inFlightChain);
-		inFlightChain.setStateChain(awaitingChain);
+		arrivedChain.setItineraryStatusChain(inFlightChain);
+		inFlightChain.setItineraryStatusChain(awaitingChain);
 		return arrivedChain;
 	}
 
