@@ -3,8 +3,7 @@
 --changeset rsaraphael:01
 
 CREATE TABLE Flight (
-    id        serial primary key,
-    name       varchar(100)
+    id        serial primary key
 );
 
 CREATE TABLE Aircraft (
@@ -27,7 +26,7 @@ CREATE TABLE Location (
 );
 
 CREATE TABLE Itinerary (
-    id        serial primary key,
-    time      timestamp,
-    type      varchar(30)
+    id               serial primary key,
+    DEPART_TIME      timestamp without time zone,
+    ARRIVE_TIME      timestamp without time zone
 );
