@@ -17,12 +17,15 @@ public class FlightAdapter {
 	public FlightDto adapt(Flight flight) {
 		List<ItineraryDto> itineraries = new ArrayList<>();
 
-		flight.getItineraries().forEach(itinerary -> itineraries.add(new ItineraryDto(itinerary.getDepartTime(),
-				itinerary.getArriveTime(), itinerary.getPilot().getName(), itinerary.getAircraft().getModelAndPrefix(),
-				stateChain.getItineraryStatus(itinerary).getStatusName())));
+		flight.getItineraries()
+				.forEach(itinerary -> itineraries.add(
+						new ItineraryDto(itinerary.getDepartTime(), itinerary.getArriveTime(),
+								itinerary.getPilot().getName(), itinerary.getAircraft().getModelAndPrefix(),
+								stateChain.getItineraryStatus(itinerary).getStatusName(),
+						itinerary.getOrigin().getCompletedInformation(),
+						itinerary.getDestination().getCompletedInformation())));
 
-		return new FlightDto(flight.getId(), itineraries, flight.getOrigin().getCompletedInformation(),
-				flight.getDestination().getCompletedInformation());
+		return new FlightDto(flight.getId(), itineraries);
 	}
 
 }

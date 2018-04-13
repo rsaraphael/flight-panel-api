@@ -15,8 +15,6 @@ public class FlightDto {
 	
 	public Long flightNumber;
 	public List<ItineraryDto> itineraries;
-	public String origin;
-	public String destination;
-	
+
 
 }

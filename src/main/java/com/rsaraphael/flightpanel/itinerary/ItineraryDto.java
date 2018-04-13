@@ -20,4 +20,6 @@ public class ItineraryDto {
 	private String pilotName;
 	private String aircraftName;
 	private String status;
+	private String origin;
+	private String destination;
 }

@@ -25,11 +25,5 @@ public class Flight {
 	@OneToMany(mappedBy = "flight")
 	@OrderBy("departTime DESC")
 	private List<Itinerary> itineraries;
-	@ManyToOne
-	@JoinColumn(name = "origin")
-	private Location origin;
-	@ManyToOne
-	@JoinColumn(name = "destination")
-	private Location destination;
 
 }
