@@ -16,7 +16,7 @@ public class ItineraryDto {
 	@JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "dd/MM/yyyy HH:mm")
 	private Date arriveTime;	
 	@JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "dd/MM/yyyy HH:mm")
-	private Date departTimeTime;
+	private Date departTime;
 	private String pilotName;
 	private String aircraftName;
 	private String status;
