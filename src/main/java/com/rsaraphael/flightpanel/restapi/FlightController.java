@@ -21,7 +21,7 @@ public class FlightController {
 
 	@GetMapping
 	public List<Long> getAllFlightNumbers() {
-		return flightService.getAllFlightNumber();
+		return flightService.getAllFlightNumbers();
 	}
 	
 	@GetMapping(value="/{id}")

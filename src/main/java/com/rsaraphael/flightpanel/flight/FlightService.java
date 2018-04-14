@@ -13,7 +13,7 @@ public class FlightService {
 	@Autowired
 	private FlightAdapter flightAdapter;
 
-	public List<Long> getAllFlightNumber() {
+	public List<Long> getAllFlightNumbers() {
 		List<Long> flightNumbers = new ArrayList<>();
 		List<Flight> flights = flightRepository.findAll();
 		flights.forEach(flight -> flightNumbers.add(flight.getId()));
