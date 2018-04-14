@@ -26,6 +26,11 @@ INSERT INTO flight (id) VALUES (2073);
 INSERT INTO flight (id) VALUES (2013);
 INSERT INTO flight (id) VALUES (2243);
 INSERT INTO flight (id) VALUES (2843);
+INSERT INTO flight (id) VALUES (7843);
+INSERT INTO flight (id) VALUES (7143);
+INSERT INTO flight (id) VALUES (7243);
+INSERT INTO flight (id) VALUES (7543);
+INSERT INTO flight (id) VALUES (7743);
 
 INSERT INTO itinerary (id, depart_time, arrive_time, pilot_id, aircraft_id, flight_id, origin, destination)
             values(1, '2018-04-11 10:00:00', '2018-04-11 16:00:00', 1, 1, 3478, 1, 2);
