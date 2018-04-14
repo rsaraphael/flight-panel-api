@@ -1,0 +1,15 @@
+version: '3.1'
+
+services:
+  Postgres:
+    restart: always
+    image: postgres
+    ports:
+    - "5432:5432"
+    environment:
+     POSTGRES_USER: flight
+     POSTGRES_PASSWORD: flight
+     POSTGRES_DB: flight
+    volumes:
+    - /srv/docker/postgresql:/var/lib/postgresql
+
