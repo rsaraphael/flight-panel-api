@@ -22,9 +22,9 @@
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 		<java.version>1.8</java.version>
-		<db.url>jdbc:postgresql://localhost:5432/flight-panel</db.url>
-		<db.user>postgres</db.user>
-		<db.pass>postgres</db.pass>
+		<db.url>jdbc:postgresql://localhost:5432/flight</db.url>
+		<db.user>flight</db.user>
+		<db.pass>flight</db.pass>
 		<db.driver>org.postgresql.Driver</db.driver>
 		<db.dialect>org.hibernate.dialect.PostgreSQLDialect</db.dialect>
 	</properties>
