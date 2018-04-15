@@ -27,5 +27,12 @@ public class FlightAdapter {
 
 		return new FlightDto(flight.getId(), itineraries);
 	}
+	
+	public List<Long> adaptToLongList(List<Flight> flights) {
+		List<Long> flightNumbers = new ArrayList<>();
+		flights.forEach(flight -> flightNumbers.add(flight.getId()));
+		return flightNumbers;
+	}
+
 
 }
