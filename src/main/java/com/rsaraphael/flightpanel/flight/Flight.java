@@ -12,6 +12,11 @@ import com.rsaraphael.flightpanel.itinerary.Itinerary;
 import lombok.Getter;
 import lombok.Setter;
 
+/**
+ * Model class that represent the Flight domain.
+ *
+ * @author Raphael Alves
+ */
 @Setter
 @Getter
 @Entity

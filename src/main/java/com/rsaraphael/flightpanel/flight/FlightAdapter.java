@@ -9,6 +9,12 @@ import org.springframework.stereotype.Component;
 import com.rsaraphael.flightpanel.itinerary.ItineraryDto;
 import com.rsaraphael.flightpanel.itinerary.statechain.ItineraryStatusChain;
 
+/**
+ * This class has methods to convert <class>Flight</class> objects 
+ * in another ones. 
+ *
+ * @author Raphael Alves
+ */
 @Component
 public class FlightAdapter {
 	@Autowired

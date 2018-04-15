@@ -8,6 +8,12 @@ import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.Setter;
 
+/**
+ *  Represents the data transfer object to <class>Flight</class> domain.
+ *  Should be used to serialization purposes. 
+ *
+ * @author Raphael Alves
+ */
 @Getter
 @Setter
 @AllArgsConstructor

@@ -6,6 +6,12 @@ import com.rsaraphael.flightpanel.itinerary.Itinerary;
 import com.rsaraphael.flightpanel.itinerary.ItineraryStatus;
 import com.rsaraphael.flightpanel.util.DateTimeProvider;
 
+/**
+ *  Contains the logic to set the Flight Status as In Flight.   
+ *  The bean is declared on <class>ComponentsBean</class>.
+ *
+ * @author Raphael Alves
+ */
 public class InFlightChain extends ItineraryStatusChain {
 
 	public InFlightChain(DateTimeProvider dateTimeProvider) {
@@ -22,4 +28,5 @@ public class InFlightChain extends ItineraryStatusChain {
 		}
 		return itineraryStatusChain.getItineraryStatus(itinerary);
 	}
+
 }

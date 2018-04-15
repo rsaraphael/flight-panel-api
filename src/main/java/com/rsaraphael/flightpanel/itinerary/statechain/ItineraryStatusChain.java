@@ -10,6 +10,12 @@ import com.rsaraphael.flightpanel.util.DateTimeProvider;
 
 import lombok.Setter;
 
+
+/**
+*  Used to abstract commom methods of the Status Chain
+*
+* @author Raphael Alves
+*/
 public abstract class ItineraryStatusChain {
 
 	protected DateTimeProvider dateTimeProvider;

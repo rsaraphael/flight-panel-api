@@ -10,6 +10,11 @@ import org.springframework.util.StringUtils;
 
 import com.rsaraphael.flightpanel.util.BaseSpecification;
 
+/**
+ * Used to handle with Like Filters of Specification of the Itinerary model.
+ *
+ * @author Raphael Alves
+ */
 public class ItineraryLikeFilter<T> extends BaseSpecification<T> {
 
 	private static final long serialVersionUID = 1L;

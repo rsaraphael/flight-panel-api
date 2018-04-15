@@ -5,6 +5,11 @@ import java.time.ZoneOffset;
 
 import org.springframework.stereotype.Component;
 
+/**
+ * Class used to handle with dates.
+ *
+ * @author Raphael Alves
+ */
 @Component
 public class DateTimeProvider {
 

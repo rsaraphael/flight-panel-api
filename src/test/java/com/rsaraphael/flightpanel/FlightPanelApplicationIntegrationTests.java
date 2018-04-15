@@ -63,5 +63,14 @@ public class FlightPanelApplicationIntegrationTests {
 						.accept(MediaType.APPLICATION_JSON_UTF8_VALUE))
 				.andExpect(status().isOk()).andExpect(jsonPath("$[0]", equalTo(2777)));
 	}
+	
+	@Test
+	public void shouldReturnEmptyIfNotFind() throws Exception {
+		this.mockMvc
+				.perform(get("/flight/search")
+						.param("destination", "Taubate")
+						.accept(MediaType.APPLICATION_JSON_UTF8_VALUE))
+				.andExpect(status().isOk()).andExpect(jsonPath("$").isEmpty());
+	}
 
 }

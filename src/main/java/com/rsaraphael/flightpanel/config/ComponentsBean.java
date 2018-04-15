@@ -11,6 +11,12 @@ import com.rsaraphael.flightpanel.itinerary.statechain.InFlightChain;
 import com.rsaraphael.flightpanel.itinerary.statechain.ItineraryStatusChain;
 import com.rsaraphael.flightpanel.util.DateTimeProvider;
 
+/**
+ * Class responsible to scan Spring beans, like components,
+ * and to declare some custom beans.
+ *
+ * @author Raphael Alves
+ */
 @ComponentScan(basePackages = {"com.rsaraphael.*"})
 @Configuration
 public class ComponentsBean {

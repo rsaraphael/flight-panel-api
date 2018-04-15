@@ -7,6 +7,11 @@ import javax.persistence.Id;
 import lombok.Getter;
 import lombok.Setter;
 
+/**
+ * Model class that represent Location.
+ *
+ * @author Raphael Alves
+ */
 @Entity
 @Getter
 @Setter

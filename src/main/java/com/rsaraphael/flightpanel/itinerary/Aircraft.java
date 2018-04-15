@@ -10,6 +10,11 @@ import javax.persistence.OneToMany;
 import lombok.Getter;
 import lombok.Setter;
 
+/**
+ * Model class that represent Aircraft.
+ *
+ * @author Raphael Alves
+ */
 @Getter
 @Setter
 @Entity

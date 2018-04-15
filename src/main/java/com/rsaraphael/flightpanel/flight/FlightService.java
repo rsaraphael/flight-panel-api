@@ -9,6 +9,12 @@ import org.springframework.stereotype.Service;
 
 import com.rsaraphael.flightpanel.itinerary.ItineraryLikeFilter;
 
+/**
+ *  Contains some of <class>Flight</class> logic and can be used
+ *  to handle with <class>Flight</class> objects.
+ *
+ * @author Raphael Alves
+ */
 @Service
 public class FlightService {
 	@Autowired

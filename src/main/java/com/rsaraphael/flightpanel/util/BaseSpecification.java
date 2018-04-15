@@ -6,6 +6,11 @@ import javax.persistence.criteria.Root;
 
 import org.springframework.data.jpa.domain.Specification;
 
+/**
+ * Class responsible to abstract some common logic used in Specification.
+ *
+ * @author Raphael Alves
+ */
 public abstract class BaseSpecification<T> implements Specification<T> {
 	
 	private static final long serialVersionUID = 1L;

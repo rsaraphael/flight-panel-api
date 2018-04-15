@@ -13,6 +13,11 @@ import org.springframework.web.bind.annotation.RestController;
 import com.rsaraphael.flightpanel.flight.FlightDto;
 import com.rsaraphael.flightpanel.flight.FlightService;
 
+/**
+ * Contains the endpoints of the Flight domain.
+ *
+ * @author Raphael Alves
+ */
 @RestController
 @RequestMapping(value = "/flight")
 @CrossOrigin	
