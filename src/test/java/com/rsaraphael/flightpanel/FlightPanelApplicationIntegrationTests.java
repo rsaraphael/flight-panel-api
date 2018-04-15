@@ -49,5 +49,16 @@ public class FlightPanelApplicationIntegrationTests {
 		this.mockMvc.perform(get("/flight").accept(MediaType.APPLICATION_JSON_UTF8_VALUE)).andExpect(status().isOk())
 				.andExpect(jsonPath("$.length()", equalTo(17)));
 	}
+	
+	@Test
+	public void shouldFilterByPilotNameAircraftModelOriginAndDestination() throws Exception {
+		this.mockMvc.perform(get("/flight/search")
+					.param("destination", "Curitiba")
+				    .param("pilotName", "Vandelei")
+				    .param("aircraftModel", "Embraer")
+				    .param("origin", "Orlando")
+				    .accept(MediaType.APPLICATION_JSON_UTF8_VALUE)).andExpect(status().isOk())
+				    .andExpect(jsonPath("$[0]", equalTo(3478)));
+	}
 
 }
