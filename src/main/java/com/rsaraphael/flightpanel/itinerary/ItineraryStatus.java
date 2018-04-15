@@ -4,7 +4,7 @@ import lombok.Getter;
 
 public enum ItineraryStatus {
 
-	ARRIVED("Arrived"), IN_FLIGHT("In flight"), AWAITING("Awaiting");
+	ARRIVED("Arrived"), IN_FLIGHT("In Flight"), AWAITING("Awaiting");
 
 	@Getter
 	private String statusName;

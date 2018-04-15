@@ -14,9 +14,9 @@ import lombok.Setter;
 public class ItineraryDto {
 	
 	@JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "dd/MM/yyyy HH:mm")
-	private Date arriveTime;	
-	@JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "dd/MM/yyyy HH:mm")
 	private Date departTime;
+	@JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "dd/MM/yyyy HH:mm")
+	private Date arriveTime;	
 	private String pilotName;
 	private String aircraftName;
 	private String status;

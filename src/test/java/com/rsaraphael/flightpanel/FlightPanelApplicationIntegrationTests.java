@@ -40,25 +40,28 @@ public class FlightPanelApplicationIntegrationTests {
 	public void shouldGetFlightById() throws Exception {
 		this.mockMvc.perform(get("/flight/3478").accept(MediaType.APPLICATION_JSON_UTF8_VALUE))
 				.andExpect(status().isOk()).andExpect(jsonPath("$.flightNumber", equalTo(3478)))
-				.andExpect(jsonPath("$.itineraries[0].pilotName", equalTo("Vandelei Prado")))
-				.andExpect(jsonPath("$.itineraries[2].status", equalTo("Arrived")));
+				.andExpect(jsonPath("$.itineraries[0].pilotName", equalTo("Josefino Correa")))
+				.andExpect(jsonPath("$.itineraries[2].status", equalTo("In Flight")));
 	}
 
 	@Test
 	public void shouldGetAllFlights() throws Exception {
-		this.mockMvc.perform(get("/flight").accept(MediaType.APPLICATION_JSON_UTF8_VALUE)).andExpect(status().isOk())
+		this.mockMvc.perform(get("/flight")
+				.accept(MediaType.APPLICATION_JSON_UTF8_VALUE))
+				.andExpect(status().isOk())
 				.andExpect(jsonPath("$.length()", equalTo(17)));
 	}
-	
+
 	@Test
 	public void shouldFilterByPilotNameAircraftModelOriginAndDestination() throws Exception {
-		this.mockMvc.perform(get("/flight/search")
-					.param("destination", "Curitiba")
-				    .param("pilotName", "Vandelei")
-				    .param("aircraftModel", "Embraer")
-				    .param("origin", "Orlando")
-				    .accept(MediaType.APPLICATION_JSON_UTF8_VALUE)).andExpect(status().isOk())
-				    .andExpect(jsonPath("$[0]", equalTo(3478)));
+		this.mockMvc
+				.perform(get("/flight/search")
+						.param("destination", "Cabo Canaveral")
+						.param("pilotName", "Mauro")
+						.param("aircraftModel", "Embraer")
+						.param("origin", "Fort Lauderdale")
+						.accept(MediaType.APPLICATION_JSON_UTF8_VALUE))
+				.andExpect(status().isOk()).andExpect(jsonPath("$[0]", equalTo(2777)));
 	}
 
 }
