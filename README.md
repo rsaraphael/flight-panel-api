@@ -6,7 +6,7 @@ Flight panel API provides an API to find and list flights of Fly Airlines.
 
 **This solution uses Spring Boot, Lombok, PostgreSQL, Liquibase, Docker and Docker Compose.**
 
-Live demo at http://flight-panel-api.herokuapp.com
+Live demo at http://flight-panel-api.herokuapp.com/flight
 > It can take a while to load because of the start of Heroku Dyno.
 
 ## Requirements
